@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Andrew's Cloud Resume</title>
+</head>
+<body>
+  <h1>Andrew</h1>
+  <h2>Cloud Engineer (in progress)</h2>
+  <p>AWS Certified Solutions Architect | Taipei, Taiwan</p>
+  
+  <h3>Skills</h3>
+  <p>AWS | EC2 | S3 | IAM | VPC | Lambda | CloudFront</p>
+  
+  <h3>Projects</h3>
+  <p>Cloud Resume on AWS — hosted on S3, delivered via CloudFront</p>
+
+  <p>👁 Visitor count: <span id="counter">Loading...</span></p>
+
+  <script>
+    fetch("https://mj433ve06i.execute-api.ap-east-2.amazonaws.com/prod")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("counter").innerText = data.views;
+      });
+  </script>
+</body>
+</html>
